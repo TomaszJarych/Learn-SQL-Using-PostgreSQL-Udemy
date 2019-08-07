@@ -1,0 +1,26 @@
+version: '3.4'
+
+services:
+
+  postgre-sql:
+    image: postgres:11.4-alpine
+    restart: always
+    environment:
+      POSTGRES_USER: ${DB_USER}
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+    ports:
+      - "${HOST_DB_PORT}:5432"
+    volumes:
+      - ./PostgreSQL_DATA:/var/lib/postgresql/data
+
+  pgAdmin:
+    image: dpage/pgadmin4:4.11
+    restart: always
+    environment:
+      PGADMIN_DEFAULT_EMAIL: ${PGADMIN_EMAIL}
+      PGADMIN_DEFAULT_PASSWORD: ${PGADMIN_PASSWORD}
+    ports:
+      - 8085:80
+    volumes:
+      - ./pgadmin_data:/var/lib/pgadmin
+      # - ./servers.json:/pgadmin4/servers.json
