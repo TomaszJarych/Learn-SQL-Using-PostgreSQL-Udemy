@@ -1,6 +1,6 @@
 docker container exec -it postgres sh
 
-psql  --host postgre-sql  --username admin --dbname northwinddevpass
+psql  --host postgre-sql  --username admin --dbname northwind
 
 
 \l - list of all databases in postgresql
