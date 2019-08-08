@@ -1,0 +1,17 @@
+docker container exec -it postgres sh
+
+psql  --host postgre-sql  --username admin --dbname northwinddevpass
+
+
+\l - list of all databases in postgresql
+
+\! clear - clear terminal window
+
+\c <database name> change database connected to
+
+\dn - list of all schemas
+
+\dt <name of the schema> . - list of all tables
+
+\d <name_of_schema.name_of_database> - describe table 
+\d+ <name_of_schema.name_of_database> - describe table 
